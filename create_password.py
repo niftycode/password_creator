@@ -4,9 +4,9 @@
 """
 A password creator inspired by the ctSESAM project.
 
-Version: 1.1
+Version: 1.2
 Python 3.6
-Date created: 29/03/2018
+Date created: 29.03.2018
 """
 
 from hashlib import pbkdf2_hmac
@@ -54,4 +54,4 @@ class Password:
         hash_string = self.domain + self.master_password
         hashed_bytes = pbkdf2_hmac('sha512', hash_string.encode('utf-8'), salt.encode('utf-8'), 4096)
         return self.convert_bytes_to_password(hashed_bytes, 12)
-        # print('Passwort: ' + self.convert_bytes_to_password(hashed_bytes, 10))
+        

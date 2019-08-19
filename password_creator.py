@@ -116,6 +116,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    app.setStyle('Macintosh')  # Fusion, Macintosh
+    # app.setStyle('Windows')  # Fusion, Macintosh
     window = MainWindow()
     sys.exit(app.exec_())
