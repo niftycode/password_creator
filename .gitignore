@@ -1,12 +1,3 @@
-/.DS_Store
-/.idea
-/.vscode
-/.pytest_cache
-
-/build
-/dist
-/browser_forensics/browser_forensics.egg-info
-/browser_forensics.egg-info
 .DS_Store
 .pytest_cache
 .vscode
