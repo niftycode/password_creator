@@ -20,12 +20,12 @@ def show_about_dialog():
     text = "<center>" \
            "<h1>Password Creator</h1>" \
            "&#8291;" \
-           "<img src=icon1.svg>" \
+           "<img src=img/icon.svg>" \
            "</center>" \
            "<p>Version 1.0.0<br/>" \
            "Created by niftycode<br/>" \
            "MIT License</p>"
-    QMessageBox.about(window, "About Text Editor", text)
+    QMessageBox.about(window, "About Password Creator", text)
 
 
 class MainWindow(QMainWindow):
@@ -37,7 +37,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(widget)
 
         # Add grid layout
-        master_password_label = QLabel('Enter your master_password:')
+        master_password_label = QLabel('Enter your masterpassword:')
         self.master_password_input = QLineEdit()
 
         domain_label = QLabel('Enter the URL:')
@@ -59,8 +59,8 @@ class MainWindow(QMainWindow):
 
         widget.setLayout(grid)
 
-        self.title = 'Password Keeper'
-        self.window_icon = 'pw_creator_icon.png'
+        self.title = 'Password Creator'
+        self.window_icon = 'img/pw_creator_icon.png'
         self.left = 300
         self.top = 300
         self.width = 500
