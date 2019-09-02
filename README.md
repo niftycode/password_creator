@@ -1,6 +1,6 @@
 # password_creator
 
-Use this program to calculate a password from masterpasswords and domains using pbkdf2. This program is inspired by [ctSESAM-python](https://github.com/pinae/ctSESAM-python).
+Use this program to calculate a password from masterpasswords and domains using [pbkdf2](https://docs.python.org/3/library/hashlib.html#key-derivation). This program is inspired by the [ctSESAM-python](https://github.com/pinae/ctSESAM-python).
 
 ## Requirements
 
