@@ -50,8 +50,6 @@ class Password:
         return password
 
     def create_hash(self):
-
         hash_string = self.domain + self.master_password
         hashed_bytes = pbkdf2_hmac('sha512', hash_string.encode('utf-8'), salt.encode('utf-8'), 4096)
         return self.convert_bytes_to_password(hashed_bytes, 12)
-        

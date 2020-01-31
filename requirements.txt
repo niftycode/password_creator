@@ -1,0 +1,6 @@
+#
+# Requirements without Version Specifiers
+pytest
+pytest-qt
+PyQt5
+pyperclip

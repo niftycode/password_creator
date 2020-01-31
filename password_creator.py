@@ -4,16 +4,18 @@
 
 """
 Main file of this project.
-Version: 1.1
+Version: 1.1.0
 Python 3.7
 Date created: 08.08.2019
 """
 
 import sys
+import pyperclip
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QAction, QApplication,
         QMessageBox, QLabel, QLineEdit, QGridLayout, QPushButton, qApp)
-import create_password
+# import create_password
+from src import create_password
 
 
 def show_about_dialog():
@@ -22,7 +24,7 @@ def show_about_dialog():
            "&#8291;" \
            "<img src=img/icon.svg>" \
            "</center>" \
-           "<p>Version 1.0.0<br/>" \
+           "<p>Version 1.1.0<br/>" \
            "Created by niftycode<br/>" \
            "MIT License</p>"
     QMessageBox.about(window, "About Password Creator", text)
@@ -70,13 +72,26 @@ class MainWindow(QMainWindow):
         self.init_ui()
 
     def button_clicked(self):
-        password = create_password.Password(self.master_password_input.text(), self.domain_input.text())
-        created_password = password.create_hash()
-        # print(created_password)
 
-        message = QMessageBox()
-        message.setText('Your password: {0}'.format(created_password))
-        message.exec_()
+        password = self.master_password_input.text()
+        domain = self.domain_input.text()
+
+        if password == "" or domain == "":
+            message = QMessageBox()
+            message.setIcon(QMessageBox.Warning)
+            message.setText('Missing values!')
+            message.setInformativeText('You have to enter a master password and a domain.')
+            message.exec_()
+        else:
+            password = create_password.Password(self.master_password_input.text(), self.domain_input.text())
+            created_password = password.create_hash()
+            pyperclip.copy(created_password)
+
+            message = QMessageBox()
+            message.setIcon(QMessageBox.Information)
+            message.setText('Your password:')
+            message.setInformativeText('{0}.'.format(created_password))
+            message.exec_()
 
     def create_actions(self):
         # Add quit and about action
