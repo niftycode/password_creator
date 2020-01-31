@@ -10,6 +10,7 @@ Date created: 08.08.2019
 """
 
 import sys
+import pyperclip
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QAction, QApplication,
         QMessageBox, QLabel, QLineEdit, QGridLayout, QPushButton, qApp)
@@ -84,6 +85,7 @@ class MainWindow(QMainWindow):
         else:
             password = create_password.Password(self.master_password_input.text(), self.domain_input.text())
             created_password = password.create_hash()
+            pyperclip.copy(created_password)
 
             message = QMessageBox()
             message.setIcon(QMessageBox.Information)
