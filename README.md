@@ -5,7 +5,8 @@ Use this program to calculate a password from masterpasswords and domains using 
 ## Requirements
 
 * Python 3.6+
-* PyQt5 (`pip3 install PyQt5`)
+* PyQt5
+* pyperclip
 
 ## Howto
 
@@ -26,3 +27,4 @@ Enter a masterpassword and an URL. With these input values the app is creating a
 ## Changelog
 
 * 19.08.2019: First commit
+* 31.01.2020: add clipboard support
