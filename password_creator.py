@@ -4,7 +4,7 @@
 
 """
 Main file of this project.
-Version: 1.1
+Version: 1.1.0
 Python 3.7
 Date created: 08.08.2019
 """
@@ -13,7 +13,8 @@ import sys
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QAction, QApplication,
         QMessageBox, QLabel, QLineEdit, QGridLayout, QPushButton, qApp)
-import create_password
+# import create_password
+from src import create_password
 
 
 def show_about_dialog():
@@ -22,7 +23,7 @@ def show_about_dialog():
            "&#8291;" \
            "<img src=img/icon.svg>" \
            "</center>" \
-           "<p>Version 1.0.0<br/>" \
+           "<p>Version 1.1.0<br/>" \
            "Created by niftycode<br/>" \
            "MIT License</p>"
     QMessageBox.about(window, "About Password Creator", text)
