@@ -98,8 +98,8 @@ class MainWindow(QMainWindow):
         self.quit_action = QAction('&Quit', self)
         self.about_action = QAction('&About', self)
 
-        # Close Action
-        self.about_action.setShortcut('Ctrl+Q')
+        # Quit Action
+        self.quit_action.setShortcut('Ctrl+Q')
         self.quit_action.setStatusTip('Exit this application.')
         self.quit_action.triggered.connect(qApp.quit)
 
