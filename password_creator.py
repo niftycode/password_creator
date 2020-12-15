@@ -4,17 +4,18 @@
 
 """
 Main file of this project.
-Version: 1.1.0
+Version: 1.1.1
 Python 3.7
-Date created: 08.08.2019
+Date created: August 8th, 2019
+Date modified: -
 """
 
 import sys
 import pyperclip
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QAction, QApplication,
-        QMessageBox, QLabel, QLineEdit, QGridLayout, QPushButton, qApp)
-# import create_password
+        QMessageBox, QLabel, QLineEdit, QGridLayout, QPushButton,
+        qApp)
 from src import create_password
 
 
@@ -24,7 +25,7 @@ def show_about_dialog():
            "&#8291;" \
            "<img src=img/icon.svg>" \
            "</center>" \
-           "<p>Version 1.1.0<br/>" \
+           "<p>Version 1.1.1<br/>" \
            "Created by niftycode<br/>" \
            "MIT License</p>"
     QMessageBox.about(window, "About Password Creator", text)
@@ -62,7 +63,7 @@ class MainWindow(QMainWindow):
         widget.setLayout(grid)
 
         self.title = 'Password Creator'
-        self.window_icon = 'img/pw_creator_icon.png'
+        self.window_icon = 'img/app_image.png'
         self.left = 300
         self.top = 300
         self.width = 500
@@ -88,9 +89,11 @@ class MainWindow(QMainWindow):
             pyperclip.copy(created_password)
 
             message = QMessageBox()
-            message.setIcon(QMessageBox.Information)
+            message.setIconPixmap(QPixmap('img/pw_creator_icon.png'))
+            # message.setIcon(QMessageBox.Information)
             message.setText('Your password:')
             message.setInformativeText('{0}.'.format(created_password))
+            message.setDetailedText('This password has been copied to the clipboard.')
             message.exec_()
 
     def create_actions(self):
@@ -131,6 +134,5 @@ class MainWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    # app.setStyle('Windows')  # Fusion, Macintosh
     window = MainWindow()
     sys.exit(app.exec_())

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='password_creator',
-    version='1.0.0',
+    version='1.1.1',
     license='MIT',
     description='Create a password using an URL',
 

@@ -4,9 +4,9 @@
 """
 A password creator inspired by the ctSESAM project.
 
-Version: 1.2
 Python 3.6
-Date created: 29.03.2018
+Date created: March 29th, 2018
+Date modified: -
 """
 
 from hashlib import pbkdf2_hmac
